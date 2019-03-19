@@ -3,6 +3,7 @@ package cuj.utils.log;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -14,7 +15,7 @@ import java.util.List;
 public class MyLogger {
     private String fileName;
 
-    public static List<String> logList = new LinkedList<>();
+    private static List<String> logList = new LinkedList<>();
 
     public MyLogger(String fileName) {
         this.fileName = fileName;
@@ -23,7 +24,7 @@ public class MyLogger {
     }
 
     public void write(String log){
-        logList.add(log);
+        logList.add(new Date()+":"+log);
     }
 
     public static String read(){

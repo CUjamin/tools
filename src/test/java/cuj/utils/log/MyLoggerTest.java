@@ -1,7 +1,6 @@
 package cuj.utils.log;
 
-import static org.junit.Assert.*;
-
+import java.util.Scanner;
 /**
  * @Auther: cujamin
  * @Date: 2019/3/19 09:58
@@ -11,16 +10,10 @@ public class MyLoggerTest {
     public static void main(String[] args) {
 
         MyLogger myLogger = new MyLogger("log.log");
-        for(int i=0;i<10;++i){
-            System.out.println("准备写入:"+i);
-            try{
-                Thread.sleep(1);
-            }catch (InterruptedException ie){
-                System.out.println("InterruptedException");
-            }
-            myLogger.write("log:"+i);
+        Scanner scanner = new Scanner(System.in);
+        while(scanner.hasNextLine()){
+            myLogger.write("log:"+scanner.nextLine());
         }
-        System.out.println(MyLogger.logList);
     }
 
 }
