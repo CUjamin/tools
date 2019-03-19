@@ -1,12 +1,12 @@
 package cuj.utils;
 
+import cuj.utils.encode.EncodeUtil;
+import cuj.utils.file.FileUtil;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * @Auther: cujamin
@@ -30,12 +30,10 @@ public class FileUtilTest {
         String data2 = "WinDump.exe:";
         for (String data:dataList){
 
-            for (String charset:EncodeUtil.Charsets) {
+            for (String charset: EncodeUtil.Charsets) {
                 String newStr = EncodeUtil.changeCharset(data,charset);
                 System.out.println(charset+":"+newStr);
             }
-
-
 
             for (String oldCharset : EncodeUtil.Charsets){
                 for (String newCharset : EncodeUtil.Charsets) {

@@ -1,4 +1,4 @@
-package cuj.utils;
+package cuj.utils.time;
 
 import java.text.DateFormat;
 import java.text.ParseException;

@@ -1,4 +1,4 @@
-package cuj.utils;
+package cuj.utils.encode;
 
 import java.io.UnsupportedEncodingException;
 

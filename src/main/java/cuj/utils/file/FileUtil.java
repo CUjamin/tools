@@ -1,4 +1,4 @@
-package cuj.utils;
+package cuj.utils.file;
 
 import java.io.*;
 import java.util.LinkedList;
@@ -37,5 +37,20 @@ public class FileUtil {
             System.out.println(" [ read completed ] ");
         }
         return list;
+    }
+
+    public static void writeInNextLine(String fileName,String data){
+        System.out.println("写入"+fileName+":"+data);
+        FileOutputStream fout = null;
+        try{
+            fout = new FileOutputStream(new File(fileName),true);
+            fout.write(data.getBytes());
+            fout.write("\r\n".getBytes());
+            fout.close();
+        }catch (IOException ie){
+            System.out.println("IOException:"+ie);
+        }finally {
+            fout = null;
+        }
     }
 }

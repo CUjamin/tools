@@ -1,6 +1,6 @@
 package cuj.utils;
 
-import static org.junit.Assert.*;
+import cuj.utils.encode.EncodeUtil;
 
 /**
  * @Auther: cujamin
@@ -20,7 +20,7 @@ public class EncodeUtilTest {
     @org.junit.Test
     public void changeCharset() throws Exception{
         String str = "WinDump.exe: listening on ";
-        for (String charset:EncodeUtil.Charsets) {
+        for (String charset: EncodeUtil.Charsets) {
             String newStr = EncodeUtil.changeCharset(str,charset);
             System.out.println(charset+":"+newStr);
         }
